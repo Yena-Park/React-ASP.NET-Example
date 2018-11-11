@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace mapsted.Models
 {
     public class SortedResult
     {
-        public string[] Steps { get; set; }
         public SortedResult()
         {
+            this.Steps = new List<string>();
         }
+        public List<string> Steps { get; set; }
     }
 }

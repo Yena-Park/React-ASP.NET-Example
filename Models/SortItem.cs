@@ -3,10 +3,8 @@ namespace mapsted.Models
 {
     public class SortItem
     {
-        public string Type { get; set; }
-        public string Value { get; set; }
-        public SortItem()
-        {
-        }
+        public string InputTypeValue { get; set; }
+        public string SortTypeValue { get; set; }
+        public string InputValue { get; set; }
     }
 }
