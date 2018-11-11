@@ -6,7 +6,7 @@ class Submit extends Component {
     super(props);
     this.state = {
       inputValue:'',
-      sortType: 'Numeric',
+      sortType: 'Quick',
       valueType: 'int'
     };
 
@@ -43,11 +43,12 @@ class Submit extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="form">
         <div className="container">
           <div className="input-container">
-            Input: <br/>
+            <p>Input:</p>
             <input
+              id="input"
               onChange={this.handleInputValueChange}
               value={this.state.inputValue} 
               placeholder="Input string of data seperated by commas"
@@ -55,22 +56,21 @@ class Submit extends Component {
           </div>
           <div className="type-container">
             <div className="sortType">
-              Sort Type <br/>
-              <select value={this.state.sortType} onChange={this.handleSortTypeChange}>
-                <option value="Quick">Quick</option>
-                <option value="Bubble">Bubble</option>
-                <option value="Bucket">Bucket</option>
+              <p>Sort Type </p>
+              <select id="sortSelect" value={this.state.sortType} onChange={this.handleSortTypeChange}>
+                <option value="Insertion">Insertion</option>
               </select>
             </div>
             <div className="valueType">
-              Value Type <br/>
-              <select value={this.state.valueType} onChange={this.handleValueTypeChange}>
-                <option value="Numeric">Numeric</option>
-                <option value="String">String</option>
+              <p>Value Type </p>
+              <select id="valueSelect" value={this.state.valueType} onChange={this.handleValueTypeChange}>
+                <option value="int">int</option>
+                <option value="double">double</option>
+                <option value="string">string</option>
               </select>
             </div>
           </div>
-          <div><button className="button">Sort</button></div>
+          <button className="button">Sort</button>
         </div>
       </form>
     );

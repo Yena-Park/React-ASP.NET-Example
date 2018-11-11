@@ -1,27 +1,58 @@
+.form {
+  width: 250px;
+  font: 15px arial, sans-serif;
+  align-content: center;
+  margin: 0 auto;
+}
+
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.input-container {
-}
-
-.type-container {
-  display: table;
+.input-container input {
   width: 100%;
 }
 
+#input {
+  width: 100%;
+  height: 25px;
+}
+
+.type-container {
+  width: 100%;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
 .sortType {
-  position: absolute;
   left: 0px;
-  width: 50%;
+  width: 45%;
 }
 
 .valueType {
-  position: absolute;
   right: 0px;
-  width: 50%;
+  width: 45%;
+}
+
+.valueType select,
+.sortType select {
+  width: 100%;
+  height: 30px;
+  background: white;
+}
+.valueType select:hover,
+.sortType select:hover {
+  color: #444645;
+  background: #d9e9fc;
 }
 
 .button {
-  background-color: #3583bd;
+  margin: 16px 4px;
+  padding: 8px;
+  background-color: #7c9ec9;
   color: white;
 }
