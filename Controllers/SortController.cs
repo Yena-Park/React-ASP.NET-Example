@@ -23,7 +23,9 @@ namespace mapsted.Controllers
             string[] splitValues = sortItem.InputValue.Split(',');
             int[] intValues;
 
-            if (splitValues.Length == 0 || splitValues.Length > 500) {
+           if (sortItem.InputValue.Equals("") ||
+               splitValues.Length == 0 ||
+               splitValues.Length > 500) {
                 return Json(new { success = false, error = "Input size is 1 to 500 values." });
             }
 

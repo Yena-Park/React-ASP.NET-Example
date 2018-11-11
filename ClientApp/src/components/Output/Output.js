@@ -3,11 +3,16 @@ import './Output.css';
 
 const renderSteps = (steps) => steps.map((step, i)=><li key={i}>{step}</li>);
 
-const Output = ({steps}) => {
+const Output = ({steps, error}) => {
   return (
-    <ul className="output">
-      {renderSteps(steps)}
-    </ul>
+    <div className="output">
+      {steps && (
+        <ul>
+          {renderSteps(steps)}
+        </ul>
+      )}
+      {error && (<div>{error}</div>)}
+    </div>
   );
 };
 

@@ -6,12 +6,12 @@ import Output from '../Output/Output';
 import SortAPI from '../../api/SortAPI';
 
 export default class App extends Component {
-  displayName = App.name
 
   constructor(props) {
     super(props);
     this.state = {
-      result: []
+      result: [],
+      error: null
     }
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -20,19 +20,23 @@ export default class App extends Component {
   onSubmit(sortType, valueType, inputValue) {
     SortAPI.fetchSort(sortType, valueType, inputValue, (result)=> {
       const { data, error, success } = result;
+      console.log(result);
       if(success) {
-        this.setState({result: data.steps});
+        this.setState({
+          result: data.steps,
+          error: null
+        });
       } else {
-        console.log(error);
+        this.setState({error});
       }
     })
   }
-  //onSubmit={onSubmit} 아래
+
   render() {
     return (
       <div>
         <Submit onSubmit={this.onSubmit}/>
-        <Output steps={this.state.result}/>
+        <Output steps={this.state.result} error={this.state.error}/>
       </div>
     );
   }
