@@ -13,13 +13,14 @@ Requirements
 ------------
 - frontend : React
 - backend : ASP.NET (Web API)
+> The ClientApp directory is a standard CRA React app
 
 Sort Type
 ---------
 - Insertion
 
 
-FrontEnd Used Libraries
+Used FrontEnd Libraries
 -----------------------
 React - A JavaScript library for building user interfaces
 
