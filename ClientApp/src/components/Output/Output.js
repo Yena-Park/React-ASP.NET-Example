@@ -1,11 +1,11 @@
 import React from 'react';
 import './Output.css';
 
-const renderSteps = (steps) => steps.map((step)=><li>{step}</li>);
+const renderSteps = (steps) => steps.map((step, i)=><li key={i}>{step}</li>);
 
 const Output = ({steps}) => {
   return (
-    <ul>
+    <ul className="output">
       {renderSteps(steps)}
     </ul>
   );

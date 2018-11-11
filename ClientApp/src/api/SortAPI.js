@@ -3,7 +3,7 @@ import axios from 'axios';
 const BASE_URL = 'https://localhost:5001';
 
 const fetchSort = (sortType, valueType, inputValue, completion) => {
-  axios.post('https://localhost:5001/api/Sort', {
+  axios.post(`${BASE_URL}/api/Sort`, {
       SortType: sortType,
       InputTypeValue: valueType,
       InputValue: inputValue

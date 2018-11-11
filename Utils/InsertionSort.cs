@@ -18,7 +18,7 @@ namespace mapsted.Utils
             {
                 return item.ToString();
             });
-            sortedResult.Steps.Add(string.Join(",", initialValues));
+            sortedResult.Steps.Add(string.Join(", ", initialValues));
 
             for (int i = 1; i < items.Length; i++)
             {
@@ -36,7 +36,7 @@ namespace mapsted.Utils
                         {
                             return value.ToString();
                         });
-                        sortedResult.Steps.Add(string.Join(",", stringValues));
+                        sortedResult.Steps.Add(string.Join(", ", stringValues));
                     }
                     else ins = 1;
                 }
@@ -48,7 +48,7 @@ namespace mapsted.Utils
         {
             SortedResult sortedResult = new SortedResult();
 
-            sortedResult.Steps.Add(string.Join(",", items));
+            sortedResult.Steps.Add(string.Join(", ", items));
 
             for (int i = 1; i < items.Length; i++)
             {
@@ -63,7 +63,7 @@ namespace mapsted.Utils
                         j--;
                         items[j + 1] = item;
 
-                        sortedResult.Steps.Add(string.Join(",", items));
+                        sortedResult.Steps.Add(string.Join(", ", items));
                     }
                     else ins = 1;
                 }

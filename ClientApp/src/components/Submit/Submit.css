@@ -23,19 +23,17 @@
 .type-container {
   width: 100%;
   display: flex;
-
-  align-items: center;
   justify-content: center;
 }
 
 .sortType {
-  left: 0px;
-  width: 45%;
+  width: 50%;
+  padding: 0 5px;
 }
 
 .valueType {
-  right: 0px;
-  width: 45%;
+  padding: 0 5px;
+  width: 50%;
 }
 
 .valueType select,
