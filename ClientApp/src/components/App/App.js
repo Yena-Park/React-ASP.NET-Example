@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import axios from 'axios';
+import Submit from '../Submit/Submit';
+import Output from '../Output/Output';
 
-import Submit from './components/Submit';
-import Output from './components/Output';
+import SortAPI from '../../api/SortAPI';
 
 export default class App extends Component {
   displayName = App.name
@@ -19,14 +19,16 @@ export default class App extends Component {
 
   onSubmit(value, inputValue) {
     //api call value, inputValue
-    axios.get('https://localhost:5001/Sort/Sort2')
-      .then(response => {
-        console.log(response.data.steps);
-
+    SortAPI.fetchSort((result)=> {
+      const { steps, error } = result;
+      if(error) {
+        console.log(error);
+      } else if (steps) {
         this.setState({
-          result: response.data.steps 
+          result: steps
         });
-      })
+      }
+    })
   }
   //onSubmit={onSubmit} 아래
   render() {

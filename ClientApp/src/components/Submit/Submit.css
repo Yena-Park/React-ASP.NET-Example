@@ -1,0 +1,27 @@
+.container {
+}
+
+.input-container {
+}
+
+.type-container {
+  display: table;
+  width: 100%;
+}
+
+.sortType {
+  position: absolute;
+  left: 0px;
+  width: 50%;
+}
+
+.valueType {
+  position: absolute;
+  right: 0px;
+  width: 50%;
+}
+
+.button {
+  background-color: #3583bd;
+  color: white;
+}
