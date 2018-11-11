@@ -3,22 +3,39 @@ import React, { Component } from 'react';
 class Submit extends Component {
   constructor(props) {
     super(props);
-    this.state = {value:'Numeric', inputValue:''};
+    this.state = {
+      value:'Numeric',
+      inputValue:'',
+      result: []
+    };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
-    this.setState({value: e.target.value});
+    this.setState({
+      value: e.target.value
+    });
+    console.log(e.target.value);
   }
 
   handleInputChange(e) {
-    this.setState({value: e.target.inputValue})
+    this.setState({
+      inputValue: e.target.value
+    });
+    console.log(e.target.value);
   }
 
   handleSubmit(e) {
+    e.preventDefault();
+    const {value, inputValue} = this.state;
+    console.log(value, inputValue);
 
+    const { onSubmit } = this.props;
+
+    onSubmit(value, inputValue);
   }
 
   render() {
@@ -32,8 +49,14 @@ class Submit extends Component {
               <option value="String">String</option>
             </select>
           </div>
-          <div><input value={this.state.inputValue} placeholder="Input string of data seperated by commas"/></div>
-          <div><input type="submit" value="submit"/></div>
+          <div>
+            <input 
+              onChange={this.handleInputChange}
+              value={this.state.inputValue} 
+              placeholder="Input string of data seperated by commas"
+            />
+          </div>
+         <div><button>Submit</button></div>
         </div>
       </form>
     );
