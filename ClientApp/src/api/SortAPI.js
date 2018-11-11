@@ -1,15 +1,17 @@
 import axios from 'axios';
 
-const fetchSort = completion => {
-  axios({
-    method: 'get',
-    url: 'https://localhost:5001/Sort/Sort2'
+const BASE_URL = 'https://localhost:5001';
+
+const fetchSort = (sortType, valueType, inputValue, completion) => {
+  axios.post('https://localhost:5001/api/Sort', {
+      SortType: sortType,
+      InputTypeValue: valueType,
+      InputValue: inputValue
   })
-    .then(response => 
-      completion({
-        steps: response.data.steps
-      }))
-    .catch(err => completion({error: err}))
+  .then(response => {
+    completion(response.data)
+  })
+  .catch(err => completion({error: err}))
 }
 
 export default {

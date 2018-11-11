@@ -17,16 +17,13 @@ export default class App extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onSubmit(value, inputValue) {
-    //api call value, inputValue
-    SortAPI.fetchSort((result)=> {
-      const { steps, error } = result;
-      if(error) {
+  onSubmit(sortType, valueType, inputValue) {
+    SortAPI.fetchSort(sortType, valueType, inputValue, (result)=> {
+      const { data, error, success } = result;
+      if(success) {
+        this.setState({result: data.steps});
+      } else {
         console.log(error);
-      } else if (steps) {
-        this.setState({
-          result: steps
-        });
       }
     })
   }
@@ -35,7 +32,7 @@ export default class App extends Component {
     return (
       <div>
         <Submit onSubmit={this.onSubmit}/>
-        <Output result={this.state.result}/>
+        <Output steps={this.state.result}/>
       </div>
     );
   }

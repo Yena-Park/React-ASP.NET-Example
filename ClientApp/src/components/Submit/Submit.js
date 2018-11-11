@@ -6,7 +6,7 @@ class Submit extends Component {
     super(props);
     this.state = {
       inputValue:'',
-      sortType: 'Quick',
+      sortType: 'Insertion',
       valueType: 'int'
     };
 
@@ -36,7 +36,7 @@ class Submit extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const {sortType, valueType, inputValue} = this.state;
+    const { sortType, valueType, inputValue } = this.state;
     const { onSubmit } = this.props;
     onSubmit(sortType, valueType, inputValue);
   }
@@ -65,7 +65,6 @@ class Submit extends Component {
               <p>Value Type </p>
               <select id="valueSelect" value={this.state.valueType} onChange={this.handleValueTypeChange}>
                 <option value="int">int</option>
-                <option value="double">double</option>
                 <option value="string">string</option>
               </select>
             </div>

@@ -33,6 +33,12 @@
     <None Remove="ClientApp\src\registerServiceWorker.js" />
     <None Remove="ClientApp\src\components\NavMenu.css" />
     <None Remove="ClientApp\src\components\FetchData.js" />
+    <None Remove="ClientApp\src\api\SortAPI.js" />
+    <None Remove="ClientApp\src\components\App\App.js" />
+    <None Remove="ClientApp\src\components\Data\FetchData.js" />
+    <None Remove="ClientApp\src\components\Output\Output.js" />
+    <None Remove="ClientApp\src\components\Submit\Submit.css" />
+    <None Remove="ClientApp\src\components\Submit\Submit.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\SampleDataController.cs" />
@@ -42,6 +48,9 @@
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
     <Folder Include="Utils\" />
+    <Folder Include="ClientApp\src\components\App\" />
+    <Folder Include="ClientApp\src\components\Output\" />
+    <Folder Include="ClientApp\src\components\Submit\" />
   </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
